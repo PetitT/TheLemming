@@ -14,14 +14,22 @@ public class DecorManager : MonoBehaviour
     public List<GameObject> decorList = new List<GameObject>();
     public List<GameObject> obstacleList = new List<GameObject>();
 
+    public SceneMovement sceneMovement;
     public Vector2 timeBetweenDecorSpawns;
+    public Vector2 minTimeBetweenDecorSpawns;
     public Vector2 timeBetweenObstacleSpawns;
+    public Vector2 minTimeBetweenObstacleSpawns;
+    public float decorSpawnBoost;
+    public float obstacleSpawnBoost;
+    public float sceneMovementBoost;
     private float remainingTimeForDecor;
     private float remainingTimeForObstacle;
 
     public float speedBoostPerSec;
     private float speedBoostTimer = 1f;
     private float currentSpeedBoost;
+
+    public event Action<float> onBoost;
 
     private void Awake()
     {
@@ -47,10 +55,12 @@ public class DecorManager : MonoBehaviour
     private void IncreaseSpeed()
     {
         speedBoostTimer -= Time.deltaTime;
-        if(speedBoostTimer < 0)
+        if (speedBoostTimer < 0)
         {
             speedBoostTimer = 1;
             currentSpeedBoost += speedBoostPerSec;
+            onBoost?.Invoke(currentSpeedBoost);
+            UpdateSpawns();
         }
     }
 
@@ -92,5 +102,22 @@ public class DecorManager : MonoBehaviour
     private void ResetObstacleTimer()
     {
         remainingTimeForObstacle = UnityEngine.Random.Range(timeBetweenObstacleSpawns.x, timeBetweenObstacleSpawns.y);
+    }
+
+    private void UpdateSpawns()
+    {
+        if (timeBetweenDecorSpawns.x > minTimeBetweenDecorSpawns.x)
+            timeBetweenDecorSpawns.x -= decorSpawnBoost;
+
+        if (timeBetweenDecorSpawns.y > minTimeBetweenDecorSpawns.y)
+            timeBetweenDecorSpawns.y -= decorSpawnBoost;
+
+        if (timeBetweenObstacleSpawns.x > minTimeBetweenObstacleSpawns.x)
+            timeBetweenObstacleSpawns.x -= obstacleSpawnBoost;
+
+        if (timeBetweenObstacleSpawns.y > minTimeBetweenObstacleSpawns.y)
+            timeBetweenObstacleSpawns.y -= obstacleSpawnBoost;
+
+        sceneMovement.speed += sceneMovementBoost;
     }
 }

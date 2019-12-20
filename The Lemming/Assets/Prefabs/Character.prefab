@@ -169,7 +169,7 @@ TrailRenderer:
   m_SortingLayerID: 1836260313
   m_SortingLayer: 2
   m_SortingOrder: 10
-  m_Time: 1
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e5293002069ae54bb8c3bd226ca7f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
   BottomLeft: {fileID: 0}
   TopRight: {fileID: 0}
 --- !u!58 &196111433912025250
@@ -309,9 +309,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6217722, y: -0.17193985}
+  m_Offset: {x: 0.5484333, y: -0.22072887}
   serializedVersion: 2
-  m_Radius: 1.4088242
+  m_Radius: 1.1242206
 --- !u!114 &5449524510495429638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,10 +324,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9b9fbb5637f6746b1debe0e6867b82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  browniePoints: 5
-  giftPoints: 10
-  sugarPoints: 3
+  browniePoints: 10
+  giftPoints: 20
+  sugarPoints: 5
   skullPoints: -5
+  rainPoints: -10
+  planePoints: -10
+  skullDamage: 5
+  rainDamage: 5
+  planeDamage: 5
+  lemming: {fileID: 6538020925837298005}
+  decor: {fileID: 0}
 --- !u!50 &212522952415045221
 Rigidbody2D:
   serializedVersion: 4
@@ -418,7 +425,7 @@ TrailRenderer:
   m_SortingLayerID: 1836260313
   m_SortingLayer: 2
   m_SortingOrder: 10
-  m_Time: 1
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -562,7 +569,7 @@ TrailRenderer:
   m_SortingLayerID: 1836260313
   m_SortingLayer: 2
   m_SortingOrder: 10
-  m_Time: 1
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -706,7 +713,7 @@ TrailRenderer:
   m_SortingLayerID: 1836260313
   m_SortingLayer: 2
   m_SortingOrder: 10
-  m_Time: 1
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -850,7 +857,7 @@ TrailRenderer:
   m_SortingLayerID: 1836260313
   m_SortingLayer: 2
   m_SortingOrder: 10
-  m_Time: 1
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -1131,7 +1138,7 @@ TrailRenderer:
   m_SortingLayerID: 1836260313
   m_SortingLayer: 2
   m_SortingOrder: 10
-  m_Time: 1
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -1275,7 +1282,7 @@ TrailRenderer:
   m_SortingLayerID: 1836260313
   m_SortingLayer: 2
   m_SortingOrder: 10
-  m_Time: 1
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
