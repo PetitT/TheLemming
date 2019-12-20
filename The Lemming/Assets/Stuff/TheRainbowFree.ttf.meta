@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: dbe26e0fc05256e43859a7c61fc0a1d7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: TheRainbowFree
+  fontNames:
+  - TheRainbowFree
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4b4315b9bced00c45b3e99a1f089fa40, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
